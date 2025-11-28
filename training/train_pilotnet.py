@@ -18,8 +18,8 @@ def train():
     # =====================
     # 1. Hyperparameters
     # =====================
-    csv_filename = "data_labels_updated.csv"
-    dataset_root = "datacollector/dataset"
+    csv_filename = r"C:\autodrive\dataset_modified\data_labels_updated.csv"
+    dataset_root = r"C:\autodrive\dataset_modified"
     num_epochs = 20
     batch_size = 128
     learning_rate = 5e-4
