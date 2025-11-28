@@ -21,8 +21,11 @@ try:
     # 패키지로 임포트되는 경우 (img-collector 에서 사용)
     from datacollector.hw_control.input_utils import get_key_nonblock
 except ImportError:
-    # drive.py 를 단독 실행할 때 (python3 hw_control/drive.py)
-    from input_utils import get_key_nonblock
+    try:
+        # drive.py 를 단독 실행할 때 (python3 hw_control/drive.py)
+        from input_utils import get_key_nonblock
+    except ImportError:
+        from hw_control.input_utils import get_key_nonblock
 
 
 # ================= PWM ENABLE ==================
