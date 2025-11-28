@@ -17,15 +17,19 @@ import Jetson.GPIO as GPIO
 import subprocess
 import getpass
 
+# get_key_nonblock() 경로별 폴백 처리
 try:
-    # 패키지로 임포트되는 경우 (img-collector 에서 사용)
+    # 패키지로 설치/실행되는 경우 (예: img-collector 패키지 내부)
     from datacollector.hw_control.input_utils import get_key_nonblock
 except ImportError:
     try:
-        # drive.py 를 단독 실행할 때 (python3 hw_control/drive.py)
-        from input_utils import get_key_nonblock
-    except ImportError:
+        # 로컬 소스 트리에서 hw_control 패키지로 실행하는 경우
+        #   python3 -m hw_control.drive
         from hw_control.input_utils import get_key_nonblock
+    except ImportError:
+        # 같은 디렉토리에서 직접 실행하는 경우
+        #   python3 drive.py
+        from input_utils import get_key_nonblock
 
 
 # ================= PWM ENABLE ==================
