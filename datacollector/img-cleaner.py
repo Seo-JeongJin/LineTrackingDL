@@ -2,13 +2,13 @@ import os
 import pandas as pd
 
 # 데이터셋 경로
-dataset_root = r"C:\autodrive\dataset_modified"
+dataset_root = r"C:\autodrive\dataset"
 
 # 기존 CSV 파일 경로 (수정할 파일)
-csv_file = r"C:\autodrive\dataset_modified\data_labels.csv"
+csv_file = r"C:\autodrive\dataset\data_labels.csv"
 
 # 새로운 CSV 파일 경로
-new_csv_file = r"C:\autodrive\dataset_modified\data_labels_updated.csv"
+new_csv_file = r"C:\autodrive\dataset\data_labels_updated.csv"
 
 # CSV 파일 읽기
 df = pd.read_csv(csv_file)
